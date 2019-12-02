@@ -93,7 +93,7 @@ static int small_light_post_config(
 {
 #if APR_HAS_THREADS
     int mpm_threads;
-    ap_mpm_query(AP_MPMQ_MAX_THREADS, &mpm_threads);
+    ap_mpm_query(AP_MPMQ_IS_THREADED, &mpm_threads);
     if (mpm_threads >= 1) {
         ap_log_error(APLOG_MARK, APLOG_CRIT, 0, s,
             "small_light module only works with mpm prefork mode"
